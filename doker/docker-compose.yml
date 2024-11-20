@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  translator:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+    networks:
+      - translator-network
+
+networks:
+  translator-network:
+    driver: bridge
